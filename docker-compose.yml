@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  proxy-vpn:
+    build: .
+    container_name: proxy-vpn-container
+    ports:
+      - "1080:1080"
+    volumes:
+      - ./openvpn-config:/etc/openvpn
+    cap_add:
+      - NET_ADMIN
+    restart: always
